@@ -3,11 +3,53 @@
   --secondary-color: #eeebd3;
   --accent-color: #255957;
   --primary-action: #b52d6d;
-  --interact-color: #8fcc49;
+  --interact-color: #b52d6d;
+  --secondary-interact-color: #8fcc49;
   --text-light-contrast: white;
   --text-dark-contrast: black;
-  --section-background: #ede6e3;
+  --section-background: #a98743;
   --card-background-dark: #437c90;
+}
+
+@keyframes rotate-in-left {
+  from {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  to {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.headshot-container.in-view {
+  animation: fade-in-down 1.5s linear 0.5, float 2.5s ease-in-out infinite;
 }
 
 body {
@@ -33,9 +75,9 @@ footer {
   background-color: black;
 }
 
-section {
+/* section {
   padding: 10px;
-}
+} */
 
 nav {
   display: flex;
@@ -163,7 +205,7 @@ button {
 }
 
 .header-button:hover {
-  background-color: var(--interact-color);
+  background-color: var(--secondary-interact-color);
 }
 
 .header-button:active {
@@ -204,8 +246,8 @@ button {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 80px;
-  background-color: var(--primary-color);
+  /* padding: 80px; */
+  /* background-color: var(--primary-color); */
 }
 
 .howiwork-text {
@@ -218,16 +260,25 @@ button {
   flex-direction: row;
 }
 
-.howiwork-container2 {
-  flex-direction: row-reverse;
-}
-
 .howiwork-container1,
 .howiwork-container2,
 .howiwork-container3 {
   display: flex;
   padding-block: 10px;
   justify-content: space-evenly;
+}
+
+.howiwork-container1 {
+  background-color: var(--primary-color);
+}
+
+.howiwork-container2 {
+  flex-direction: row-reverse;
+  background-color: var(--secondary-color);
+}
+
+.howiwork-container3 {
+  background-color: var(--section-background);
 }
 
 .contact-form {
@@ -239,12 +290,22 @@ button {
   padding-block: 35px;
 }
 
-.divider1 {
+.divider1,
+.divider2,
+.divider3,
+.divider4 {
   display: flex;
+}
+
+.divider1 {
   background-color: var(--secondary-color);
 }
-.divider2 {
-  display: flex;
+
+.divider3 {
+  background-color: var(--primary-color);
+}
+.divider4 {
+  background-color: var(--secondary-color);
 }
 
 .headshot {
