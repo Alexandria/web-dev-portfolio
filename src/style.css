@@ -48,6 +48,15 @@
   }
 }
 
+@keyframes strike {
+  from {
+    text-decoration-color: transparent;
+  }
+  to {
+    text-decoration-color: auto;
+  }
+}
+
 .headshot-container.in-view {
   animation: fade-in-down 1.5s linear 0.5, float 2.5s ease-in-out infinite;
 }
@@ -92,11 +101,27 @@ nav {
 
 nav a {
   color: var(--text-dark-contrast);
+  position: relative;
 }
 
-nav a:hover {
-  color: var(--interact-color);
-  text-decoration-line: line-through;
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  left: -0.5rem;
+  right: calc(100% + 0.5rem);
+  background-color: rgba(181, 45, 109);
+  box-shadow: 2px 2px 3px var(--interact-color);
+  transition: 300ms ease-in-out;
+  z-index: -1;
+}
+
+nav a:hover::after {
+  /* color: var(--interact-color); */
+  /* text-decoration-line: line-through;
+  text-decoration-color: var(--interact-color); */
+  right: -0.5rem;
 }
 
 ul {
@@ -198,14 +223,16 @@ button {
   align-items: center;
   width: 200px;
   height: 50px;
-  background-color: var(--primary-action);
+  /* background-color: var(--primary-action); */
+  border: 5px dotted var(--primary-action);
   border-radius: 30px;
   padding: 10px;
   color: var(--text-dark-contrast);
+  transition: background-color 0.5s ease-out;
 }
 
 .header-button:hover {
-  background-color: var(--secondary-interact-color);
+  background-color: var(--interact-color);
 }
 
 .header-button:active {
@@ -229,6 +256,7 @@ button {
 
 #socials-header svg {
   fill: black;
+  transition: fill 0.8s ease-out;
 }
 
 #socials-header svg:hover {
