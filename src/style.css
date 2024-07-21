@@ -581,6 +581,10 @@ button {
   textarea {
     height: 5rem;
   }
+  footer {
+    align-content: flex-start;
+    flex-wrap: wrap-reverse;
+  }
 
   .form {
     width: 100%;
