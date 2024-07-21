@@ -122,7 +122,13 @@ ul {
 }
 
 ul.show {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+  align-self: center;
+  padding-inline: 10px;
+  height: 13dvh;
 }
 
 li {
@@ -221,9 +227,8 @@ button {
   align-items: center;
   width: 200px;
   height: 50px;
-  /* background-color: var(--primary-action); */
-  border: 5px dotted var(--primary-action);
-  border-radius: 30px;
+  border: 5px solid var(--primary-action);
+  border-radius: 15px;
   padding: 10px;
   color: var(--text-dark-contrast);
   transition: background-color 0.5s ease-out;
@@ -375,11 +380,6 @@ button {
 .info {
   padding: 20px;
   align-self: center;
-}
-
-hr {
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .hamburger {
@@ -634,8 +634,12 @@ hr {
     flex-direction: row;
     margin-right: 0px;
     margin: 30px 0px 50px 0px;
-    width: 90%;
     padding-bottom: 0px;
+  }
+
+  #socials-header svg {
+    width: 40px;
+    height: 40px;
   }
 
   h1 {
@@ -658,9 +662,10 @@ hr {
     height: 30px;
   }
   .header-button {
-    width: 175px;
+    width: 120px;
     height: 45px;
     margin-top: 40px;
+    font-size: smaller;
   }
 
   hr {
@@ -708,11 +713,23 @@ hr {
   }
 
   .contact-form {
-    height: 40dvh;
+    height: 45dvh;
     padding-block: 10px;
   }
 
   .form {
     height: 100%;
+  }
+
+  footer {
+    justify-content: center;
+    align-content: end;
+    flex-wrap: wrap-reverse;
+  }
+  .socials-footer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    align-self: center;
   }
 }
